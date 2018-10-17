@@ -1,0 +1,9 @@
+{
+  "name": "mean-app",
+  "version": "1.0.0",
+  "description": "MEAN App",
+  "main": "server.js",
+  "dependencies": {
+    "express": "latest"
+  }
+}
