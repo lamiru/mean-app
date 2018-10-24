@@ -8,6 +8,7 @@
     "compression": "latest",
     "ejs": "latest",
     "express": "latest",
+    "express-session": "latest",
     "method-override": "latest",
     "morgan": "latest"
   }
