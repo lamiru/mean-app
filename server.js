@@ -1,9 +1,5 @@
-var express = require('express')
+var express = require('./config/express')
 var app = express()
-
-app.use('/$', function(req, res) {
-  res.send('Hello World')
-})
 app.listen(3000)
 module.exports = app
 
