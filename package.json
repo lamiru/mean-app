@@ -4,6 +4,10 @@
   "description": "MEAN App",
   "main": "server.js",
   "dependencies": {
-    "express": "latest"
+    "express": "latest",
+    "morgan": "latest",
+    "compression": "latest",
+    "body-parser": "latest",
+    "method-override": "latest"
   }
 }
