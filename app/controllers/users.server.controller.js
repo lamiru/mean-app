@@ -47,7 +47,8 @@ exports.edit = function(req, res, next) {
     })
   } else {
     res.render('form', {
-      title: 'Form'
+      title: 'Form',
+      user: req.user
     })
   }
 }
