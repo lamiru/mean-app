@@ -31,3 +31,21 @@ exports.new = function(req, res, next) {
     })
   }
 }
+
+exports.detail = function(req, res) {
+  res.json(req.user)
+}
+
+exports.userByID = function(req, res, next, id) {
+  User.findOne({
+    _id: id
+  }, function(err, user) {
+    if (err) {
+      return next(err)
+    } else {
+      req.user = user
+      next()
+    }
+  })
+}
+
