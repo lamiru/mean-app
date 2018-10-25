@@ -45,6 +45,10 @@ exports.edit = function(req, res, next) {
         res.json(user)
       }
     })
+  } else {
+    res.render('form', {
+      title: 'Form'
+    })
   }
 }
 

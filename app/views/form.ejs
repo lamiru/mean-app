@@ -38,7 +38,7 @@
     $('form').submit(function(e) {
       e.preventDefault();
       $.ajax({
-        url: '/users/new',
+        url: window.location.pathname,
         type: 'POST',
         data: $('form').serializeArray(),
         dataType: 'json',
