@@ -27,7 +27,8 @@ exports.new = function(req, res, next) {
     })
   } else {
     res.render('form', {
-      title: 'Form'
+      title: 'Form',
+      user: {}
     })
   }
 }
