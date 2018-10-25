@@ -17,6 +17,7 @@
             <th>Last Name</th>
             <th>Email</th>
             <th>Edit</th>
+            <th>Delete</th>
           </tr>
         </thead>
         <tbody>
@@ -27,6 +28,7 @@
             <td><%=users[i].lastName%></td>
             <td><%=users[i].email%></td>
             <th><a href="/users/edit/<%=users[i].id%>">Edit</th>
+            <th><a href="/users/delete/<%=users[i].id%>">Delete</th>
           </tr>
           <% } %>
         </tbody>

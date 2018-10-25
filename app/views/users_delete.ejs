@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%=title%></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <section class="container">
+      <h1><%=title%></h1>
+      <div class="panel panel-default">
+        <div class="panel-heading">정말로 삭제하시겠습니까?</div>
+        <div class="panel-body">
+          <form method="post" enctype="multipart/form-data">
+            <button type="submit" class="btn btn-danger">삭제</button>
+            <a class="btn btn-default" href="/users">취소</a>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script>
+    $('form').submit(function(e) {
+      e.preventDefault();
+      $.ajax({
+        url: window.location.pathname,
+        type: 'POST',
+        data: $('form').serializeArray(),
+        dataType: 'json',
+      }).done(function(data) {
+        alert('성공했습니다.');
+        window.location.href = '/users';
+      }).fail(function(data) {
+        alert('실패했습니다.');
+      });
+    });
+  </script>
+</html>

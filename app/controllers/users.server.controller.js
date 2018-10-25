@@ -62,6 +62,10 @@ exports.delete = function(req, res, next) {
         res.json(req.user)
       }
     })
+  } else {
+    res.render('users_delete', {
+      title: 'Delete',
+    })
   }
 }
 
