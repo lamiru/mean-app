@@ -53,6 +53,18 @@ exports.edit = function(req, res, next) {
   }
 }
 
+exports.delete = function(req, res, next) {
+  if (req.method == 'POST') {
+    req.user.remove(function(err) {
+      if (err) {
+        return next(err)
+      } else {
+        res.json(req.user)
+      }
+    })
+  }
+}
+
 exports.userByID = function(req, res, next, id) {
   User.findOne({
     _id: id

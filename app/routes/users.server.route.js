@@ -15,5 +15,8 @@ module.exports = function(app) {
     .post(users.edit)
     .get(users.edit)
 
+  app.route('/users/delete/:userId$')
+    .post(users.delete)
+
   app.param('userId', users.userByID)
 }
