@@ -2,7 +2,7 @@ var User = require('mongoose').model('User')
 
 exports.index = function(req, res, next) {
   // User.find({}, function(err, users) { 조건 없이 전체 조회
-  User.find({}, 'username firstName lastName email', { skip: 0, limit: 1000 }, function(err, users) {
+  User.find({}, 'username firstName lastName email website', { skip: 0, limit: 1000 }, function(err, users) {
     if (err) {
       return next(err)
     } else {
