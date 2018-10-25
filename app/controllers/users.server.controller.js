@@ -36,6 +36,18 @@ exports.detail = function(req, res) {
   res.json(req.user)
 }
 
+exports.edit = function(req, res, next) {
+  if (req.method == 'POST') {
+    User.findByIdAndUpdate(req.user.id, req.body, function(err, user) {
+      if (err) {
+        return next(err)
+      } else {
+        res.json(user)
+      }
+    })
+  }
+}
+
 exports.userByID = function(req, res, next, id) {
   User.findOne({
     _id: id
