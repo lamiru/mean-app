@@ -10,6 +10,26 @@
     <section class="container">
       <h1><%=title%></h1>
       <form method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" name="username" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" name="password" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="firstName">First Name:</label>
+          <input type="text" name="firstName" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name:</label>
+          <input type="text" name="lastName" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" name="email" class="form-control" required>
+        </div>
         <button type="submit" class="btn btn-default">저장</button>
       </form>
     </section>
@@ -20,13 +40,7 @@
       $.ajax({
         url: '/users/new',
         type: 'POST',
-        data: {
-            username: 'username',
-            password: 'password',
-            firstName: 'First Name',
-            lastName: 'Last Name',
-            email: 'swill@swill.co.kr',
-        },
+        data: $('form').serializeArray(),
         dataType: 'json',
       }).done(function(data) {
         alert('성공했습니다.');
