@@ -6,7 +6,10 @@ exports.index = function(req, res, next) {
     if (err) {
       return next(err)
     } else {
-      res.json(users)
+      res.render('users_index', {
+        title: 'Users List',
+        users: users
+      })
     }
   })
 }
