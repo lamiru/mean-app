@@ -10,6 +10,7 @@
     "express": "latest",
     "express-session": "latest",
     "method-override": "latest",
-    "morgan": "latest"
+    "morgan": "latest",
+    "mongoose": "latest"
   }
 }
